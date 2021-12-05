@@ -92,7 +92,7 @@ export default {
   },
   data() {
     return {
-      type: "register",
+      type: "login",
       username: "",
       password: "",
       confirmPassword: "",
@@ -125,14 +125,29 @@ export default {
         this.$message.error("请输入密码");
         return;
       }
+      var username = localStorage.getItem("username");
+      var password = localStorage.getItem("password");
+      if (this.username != username || this.password != password) {
+        this.$message.error("用户名或密码错误");
+        return;
+      }
+      this.$message.success("登录成功");
     },
     onRegister() {
       if (this.username == "") {
         this.$message.error("请输入用户名");
         return;
       }
+      if (this.username.length < 6 || this.username.length > 20) {
+        this.$message.error("用户名长度需要6~20个字符");
+        return;
+      }
       if (this.password == "") {
         this.$message.error("请输入密码");
+        return;
+      }
+      if (this.password.length < 6 || this.password.length > 20) {
+        this.$message.error("密码长度必须在6~20位之间");
         return;
       }
       if (this.confirmPassword == "") {
@@ -147,6 +162,14 @@ export default {
         this.$message.error("请输入身份证号");
         return;
       }
+      if (this.password != this.confirmPassword) {
+        this.$message.error("两次密码不一致");
+        return;
+      }
+      localStorage.setItem("username", this.username);
+      localStorage.setItem("password", this.password);
+      this.$message.error("请认真核对后提交");
+      // this.type = "login";
     },
     toRegister() {
       if (this.type == "login") {

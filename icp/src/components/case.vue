@@ -1,33 +1,50 @@
 <template>
-  <div class="index">
-    <div class="cover">
-      <div>
-        <img src="@/assets/cover.png" />
-      </div>
-      <div class="description">
-        <div class="title">聚缘 | 桃花岛</div>
-        <div class="sub">
-          桃花岛：遇见桃花的地方。如果你喜欢的人也喜欢你，恭喜，一见钟情！只有相互喜欢的人才可以开始聊天，眼缘不错，趣味相投，向陌生人尴尬的搭讪说再见吧。
-        </div>
-      </div>
-    </div>
-    <div class="component">
+  <div class="about">
+    <el-carousel height="400px">
+      <el-carousel-item v-for="image in imageList" :key="image">
+        <el-image
+          style="height: 400px"
+          :src="image"
+          fit="contain"
+          mode="widthFix"
+        ></el-image>
+      </el-carousel-item>
+    </el-carousel>
+    <div class="title">
       <el-row>
-        <el-col :span="6" class="card light">
-          <div class="title">卡牌推荐</div>
-          <div class="desc">推荐卡牌，查看个人信息，了解你想认识的人</div>
+        <el-col :span="6">
+          <div class="t1">付费查看内容</div>
+          <div class="t2">Valuable Contents</div>
         </el-col>
-        <el-col :span="6" class="card deep">
-          <div class="title">群组列表</div>
-          <div class="desc">挑选值得信赖的群组加入，保护个人隐私</div>
+      </el-row>
+      <el-row>
+        <el-col :span="6">
+          <div class="b1"></div>
         </el-col>
-        <el-col :span="6" class="card light">
-          <div class="title">广场交友</div>
-          <div class="desc">关注群友动态，了解他/她喜欢的和爱好的</div>
+        <el-col :span="18">
+          <div class="b2"></div>
         </el-col>
-        <el-col :span="6" class="card deep">
-          <div class="title">活动组织</div>
-          <div class="desc">组织线上/线下活动，促进用户活跃</div>
+      </el-row>
+    </div>
+    <div class="content">
+      <el-row>
+        <el-col :span="8">
+          <div class="card card1" @click="onClick">
+            <div class="title">充值会员</div>
+            <div class="desc">充值成为会员 (费用 99元/月)</div>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="card card3" @click="onClick">
+            <div class="title">活动报名</div>
+            <div class="desc">报名参加线下活动 (费用 88元/次)</div>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="card card2" @click="onClick">
+            <div class="title">超级曝光</div>
+            <div class="desc">大力增加自己的曝光度 (费用 66元/次)</div>
+          </div>
         </el-col>
       </el-row>
     </div>
@@ -40,6 +57,16 @@ export default {
   props: {
     msg: String,
   },
+  data: function () {
+    return {
+      imageList: ["http://anli.web.weqcloud.cn/img/banner10.jpg"],
+    };
+  },
+  methods: {
+    onClick: function () {
+      this.$message.error("请先登录");
+    },
+  },
 };
 </script>
 
@@ -48,66 +75,67 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+
 a {
   color: #42b983;
 }
+.card {
+  width: 300px;
+  height: 240px;
 
-.index {
-  display: flex;
-  flex-direction: column;
+  background-size: cover;
+  cursor: pointer;
+  padding: 10px 20px;
 }
 
-.cover {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.description {
-  margin-left: -400px;
-  width: 500px;
-}
-
-.description .title {
+.t1 {
   font-size: 30px;
 }
 
-.description .sub {
-  margin-top: 40px;
-  padding: 20px;
+.t2 {
+  font-size: 24px;
 }
 
-.component {
+.t3 {
+  font-size: 26px;
+  font-weight: bold;
 }
 
-.card {
-  padding: 20px;
+.card .title {
+  font-size: 30px;
+}
+
+.card .desc {
+  margin-top: 170px;
+}
+
+.card1 {
+  background-image: url("http://img.qijin.tech/Feishu20211205-192129.png");
   color: white;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
-.title {
-  font-size: 28px;
+.card2 {
+  background-image: url("http://img.qijin.tech/Feishu20211205-193653.png");
+  color: white;
 }
-
-.light {
-  background-color: gray;
+.card3 {
+  background-image: url("http://img.qijin.tech/Feishu20211205-193629.png");
+  color: white;
 }
 
-.desc {
-  width: 70%;
+.content {
+  text-align: left;
+  margin-top: 20px;
+  padding-left: 60px;
 }
 
-.deep {
-  background-color: #333333;
+img {
+  height: 400px;
+}
+
+.b1 {
+  border-bottom: 6px solid #e1a601;
+}
+.b2 {
+  border-bottom: 6px solid #50a808;
 }
 </style>

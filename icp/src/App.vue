@@ -24,7 +24,7 @@
           <el-col :span="3" class="click">
             <div class="tab" v-on:click="onClick('case')">
               <div>CASE</div>
-              <div>收费内容</div>
+              <div>内容案例</div>
             </div>
           </el-col>
           <el-col :span="3" class="click">
@@ -53,6 +53,9 @@
       <el-main v-if="tab == 'about'">
         <about />
       </el-main>
+      <el-main v-if="tab == 'case'">
+        <case />
+      </el-main>
       <el-main v-if="tab == 'contact'">
         <contact />
       </el-main>
@@ -71,6 +74,7 @@ import myFooter from "./components/footer.vue";
 import About from "./components/about.vue";
 import Contact from "./components/contact.vue";
 import Login from "./components/login.vue";
+import Case from "./components/case.vue";
 
 export default {
   name: "App",
@@ -81,14 +85,20 @@ export default {
     About,
     Contact,
     Login,
+    Case,
   },
   data: function () {
     return {
-      tab: "login",
+      tab: "index",
     };
   },
   methods: {
     onClick: function (tabValue) {
+      if (tabValue == "member") {
+        this.$message.error("请先登录");
+        this.tab = "login";
+        return;
+      }
       this.tab = tabValue;
     },
   },
