@@ -30,20 +30,40 @@
       <el-row>
         <el-col :span="8">
           <div class="card card1" @click="onClick">
-            <div class="title">充值会员</div>
-            <div class="desc">充值成为会员 (费用 99元/月)</div>
+            <div class="title">和畅餐饮品牌设计{收费5元}</div>
+            <div class="desc">标志设计、品牌策划{收费5元}</div>
           </div>
         </el-col>
         <el-col :span="8">
           <div class="card card3" @click="onClick">
-            <div class="title">活动报名</div>
-            <div class="desc">报名参加线下活动 (费用 88元/次)</div>
+            <div class="title">莫瑞森超市logo设计{收费5元}</div>
+            <div class="desc">标志设计、品牌策划{收费5元}</div>
           </div>
         </el-col>
         <el-col :span="8">
           <div class="card card2" @click="onClick">
-            <div class="title">超级曝光</div>
-            <div class="desc">大力增加自己的曝光度 (费用 66元/次)</div>
+            <div class="title">朗奥科技品牌LOGO设计{收费5元}</div>
+            <div class="desc">品牌VIS/品牌画册/产品设计{收费5元}</div>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row style="margin-top: 30px">
+        <el-col :span="8">
+          <div class="card card4" @click="onClick">
+            <div class="title">施必牢品牌标志设计{收费5元}</div>
+            <div class="desc">施必牢品牌标志设计{收费5元}</div>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="card card5" @click="onClick">
+            <div class="title">ATIMA品牌策划{收费5元}</div>
+            <div class="desc">报名参加线下活动 (费用 88元/次)</div>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="card card6" @click="onClick">
+            <div class="title">汉萨汽车品牌设计{收费5元}</div>
+            <div class="desc">汉萨汽车品牌设计{收费5元}</div>
           </div>
         </el-col>
       </el-row>
@@ -88,6 +108,13 @@ a {
   padding: 10px 20px;
 }
 
+.card:hover {
+  background-color: rgb(181, 218, 17) !important;
+  background-image: none;
+  z-index: 1000;
+  opacity: 0.8;
+}
+
 .t1 {
   font-size: 30px;
 }
@@ -102,7 +129,7 @@ a {
 }
 
 .card .title {
-  font-size: 30px;
+  font-size: 18px;
 }
 
 .card .desc {
@@ -110,15 +137,27 @@ a {
 }
 
 .card1 {
-  background-image: url("http://img.qijin.tech/Feishu20211205-192129.png");
-  color: white;
+  background-image: url("http://anli.web.weqcloud.cn/img/201711617375394022.jpg");
+  color: black;
 }
 .card2 {
-  background-image: url("http://img.qijin.tech/Feishu20211205-193653.png");
-  color: white;
+  background-image: url("http://anli.web.weqcloud.cn/img/201711614230249830.jpg");
+  color: black;
 }
 .card3 {
-  background-image: url("http://img.qijin.tech/Feishu20211205-193629.png");
+  background-image: url("http://anli.web.weqcloud.cn/img/201782913525414227.jpg");
+  color: white;
+}
+.card4 {
+  background-image: url("http://anli.web.weqcloud.cn/img/201782913525414227.jpg");
+  color: white;
+}
+.card5 {
+  background-image: url("http://anli.web.weqcloud.cn/img/2016122910062331490.jpg");
+  color: black;
+}
+.card6 {
+  background-image: url("http://anli.web.weqcloud.cn/img/2016122916010552197.jpg");
   color: white;
 }
 

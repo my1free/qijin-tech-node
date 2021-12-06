@@ -24,7 +24,7 @@
           <el-col :span="3" class="click">
             <div class="tab" v-on:click="onClick('case')">
               <div>CASE</div>
-              <div>内容案例</div>
+              <div>收费内容</div>
             </div>
           </el-col>
           <el-col :span="3" class="click">
@@ -119,6 +119,7 @@ export default {
   background-color: #363636;
   color: white;
   padding: 20px 0px;
+  font-weight: bold;
 }
 .header .company {
   font-size: 26px;
