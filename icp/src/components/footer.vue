@@ -4,8 +4,8 @@
       违法和不良信息举报电话：4006690888 消费者维权/客户服务/青少年守护专线
     </el-row>
     <el-row>
-      @2021 桃花岛 北京齐晋网络科技有限公司
-      <a href="https://beian.miit.gov.cn/">京ICP备19004192号-1</a>
+      @2021 北京齐晋网络科技有限公司
+      <a href="https://beian.miit.gov.cn/">京ICP备2021038869号-1</a>
       北京市房山区阎富路66号院2号楼1层
     </el-row>
     <el-row> 营业执照：91110111MA04GBYN2H</el-row>
